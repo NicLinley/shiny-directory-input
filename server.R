@@ -17,7 +17,7 @@ shinyServer(function(input, output, session) {
       if (input$directory > 0) {
         # condition prevents handler execution on initial app launch
 
-        path = choose.dir(default = readDirectoryInput(session, 'directory'))
+        path = tcltk::tk_choose.dir(default = readDirectoryInput(session, 'directory'))
         updateDirectoryInput(session, 'directory', value = path)
       }
     }
